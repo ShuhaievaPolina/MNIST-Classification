@@ -1,34 +1,57 @@
 # MNIST Digit Classifier
 
-A fully connected neural network built in PyTorch to classify handwritten digits from the MNIST dataset, with data augmentation, training/validation monitoring, and error analysis.
+A fully connected neural network built in PyTorch to classify handwritten digits from the MNIST dataset, featuring data augmentation, training/validation monitoring, and error analysis.
 
-Overview
-
+##  Overview
 This project implements an end-to-end digit classification pipeline: loading and augmenting the MNIST dataset, training a multilayer perceptron (MLP), tracking training/validation metrics across epochs, and visualizing both aggregate performance and individual misclassified examples.
 
-Features
-Data augmentation on the training set: random rotation (±10°) and random affine transforms (translation, scaling) to improve generalization<br>
-Train / validation / test split: 50,000 training images, 10,000 validation images, and the standard 10,000-image MNIST test set<br>
-Custom MLP architecture (Neural_numbers): input flattening → Linear(784→128) → ReLU → Linear(128→128) → ReLU → Linear(128→10)<br>
-Training loop with tqdm progress bars, Cross-Entropy loss, and the Adam optimizer<br>
-Device-agnostic training — automatically uses CUDA, Apple MPS, or CPU depending on availability<br>
-Full training dashboard: plots of training/validation loss and accuracy across epochs<br>
-Error analysis: visualization of misclassified test samples with ground-truth vs. predicted labels<br>
-Parameter counting utility to inspect model size<br>
+##  Features
+* **Data Augmentation:** Random rotation (±10°) and random affine transforms (translation, scaling) on the training set to improve generalization.
+* **Dataset Split:** 50,000 training images, 10,000 validation images, and the standard 10,000-image MNIST test set.
+* **Custom MLP Architecture (`Neural_numbers`):** Input flattening → `Linear(784→128)` → `ReLU` → `Linear(128→128)` → `ReLU` → `Linear(128→10)`.
+* **Training Pipeline:** Cross-Entropy loss, Adam optimizer, and progress bars via `tqdm`.
+* **Device-Agnostic:** Automatically detects and utilizes CUDA, Apple MPS, or CPU.
+* **Dashboard & Error Analysis:** Visualizations for loss/accuracy curves, confusion matrix, and misclassified test samples with ground-truth vs. predicted labels.
+* **Parameter Counting:** Built-in utility to inspect total trainable parameters (~118k).
 
-Tech Stack
-Language: Python<br>
-Framework: PyTorch, torchvision<br>
-Other libraries: NumPy, Matplotlib, OpenCV, scikit-learn (confusion matrix), tqdm
+##  Tech Stack
+* **Language:** Python
+* **Framework:** PyTorch, torchvision
+* **Libraries:** NumPy, Matplotlib, OpenCV, scikit-learn, tqdm
 
-## Results
+##  Results
 * **Test Accuracy:** `98.18%`
 * **Test Loss:** `0.056`
 * Trained for 7 epochs with data augmentation (random rotation & affine transforms).
 
-<img width="1214" height="1009" alt="image" src="https://github.com/user-attachments/assets/1e95fa6b-660a-4bea-935a-70fc537a4d52" />
+<img width="1214" alt="MNIST Training Dashboard" src="https://github.com/user-attachments/assets/1e95fa6b-660a-4bea-935a-70fc537a4d52" />
 
-Motivation
+##  Quick Start
 
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/ShuhaievaPolina/MNIST-Classification.git](https://github.com/ShuhaievaPolina/MNIST-Classification.git)
+   cd MNIST-Classification
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Run the notebook:**
+   Open `MNIST.ipynb` in Google Colab or VS Code and run all cells.
+
+##  Repository Structure
+```text
+.
+├── assets/                  # Saved dashboard plots and misclassified samples
+├── MNIST.ipynb              # Main Google Colab / Jupyter notebook
+├── mnist_mlp.pth            # Trained PyTorch model weights
+├── requirements.txt         # Project dependencies
+├── .gitignore               # Files ignored by Git
+└── README.md                # Project documentation
+```
+
+##  Motivation
 This project was built as a hands-on introduction to training neural networks in PyTorch — covering the full workflow from data loading and augmentation to model design, training, and error analysis on a classic benchmark dataset.
-
