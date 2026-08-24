@@ -21,9 +21,10 @@ Language: Python<br>
 Framework: PyTorch, torchvision<br>
 Other libraries: NumPy, Matplotlib, OpenCV, scikit-learn (confusion matrix), tqdm
 
-Results
-
-The model is trained for 7 epochs, with training/validation loss and accuracy tracked and plotted after training. Misclassified examples from the test set are visualized to inspect common failure patterns.
+## Results
+* **Test Accuracy:** `98.18%`
+* **Test Loss:** `0.056`
+* Trained for 7 epochs with data augmentation (random rotation & affine transforms).
 
 <img width="1214" height="1009" alt="image" src="https://github.com/user-attachments/assets/1e95fa6b-660a-4bea-935a-70fc537a4d52" />
 
