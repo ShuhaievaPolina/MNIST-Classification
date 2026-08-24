@@ -24,7 +24,7 @@ This project implements an end-to-end digit classification pipeline: loading and
 * **Test Loss:** `0.056`
 * Trained for 7 epochs with data augmentation (random rotation & affine transforms).
 
-<img width="1214" alt="MNIST Training Dashboard" src="https://github.com/user-attachments/assets/1e95fa6b-660a-4bea-935a-70fc537a4d52" />
+<img width="1214" alt="MNIST Training Dashboard" src="assets/loss_accuracy.png" />
 
 ##  Quick Start
 
