@@ -46,6 +46,8 @@ This project implements an end-to-end digit classification pipeline: loading and
 ```text
 .
 ├── assets/                  # Saved dashboard plots and misclassified samples
+│   ├── loss_accuracy.png    # Loss & Accuracy plots + Confusion matrix
+│   └── misclassified.png    # Sample of misclassified test images
 ├── MNIST.ipynb              # Main Google Colab / Jupyter notebook
 ├── mnist_mlp.pth            # Trained PyTorch model weights
 ├── requirements.txt         # Project dependencies
